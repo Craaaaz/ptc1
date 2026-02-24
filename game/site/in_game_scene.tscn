@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8l8qhwed8xu5" path="res://assets/tileDirt_tile.png" id="2_gr1es"]
 [ext_resource type="Script" uid="uid://cqp3i3baj3dle" path="res://game/site/map_setup.gd" id="2_qei7b"]
 [ext_resource type="Texture2D" uid="uid://dmpd0jvf2hdl8" path="res://assets/tileGrass_tile.png" id="3_gr1es"]
+[ext_resource type="Script" uid="uid://bm7kabiqll25r" path="res://game/site/camera_2d.gd" id="5_txc6y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr1es"]
 texture = ExtResource("1_h61g2")
@@ -32,6 +33,6 @@ sources/2 = SubResource("TileSetAtlasSource_i3a40")
 [node name="MapSetup" type="TileMapLayer" parent="." unique_id=1298445413]
 tile_set = SubResource("TileSet_w60g3")
 script = ExtResource("2_qei7b")
-radius = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1823328197]
+script = ExtResource("5_txc6y")
