@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://1k7fsmgjkaq6"]
+
+[ext_resource type="Texture2D" uid="uid://c817q3s48j336" path="res://Images/Player.png" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://8hp1laanqk8t" path="res://GDscript/player_move.gd" id="1_go701"]
+[ext_resource type="Texture2D" uid="uid://cjeks5jbn7cox" path="res://Images/tileDirt_tile.png" id="2_fo5ed"]
+[ext_resource type="Texture2D" uid="uid://crgti3fxt3khq" path="res://Images/Site.png" id="3_5a7ea"]
+[ext_resource type="Script" uid="uid://bu4jh2w1fyl7g" path="res://GDscript/map_setup.gd" id="3_5ukr8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o06y3"]
+texture = ExtResource("3_5a7ea")
+texture_region_size = Vector2i(56, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
+texture = ExtResource("2_fo5ed")
+texture_region_size = Vector2i(56, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8j60k"]
+tile_shape = 3
+tile_size = Vector2i(56, 64)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
+sources/0 = SubResource("TileSetAtlasSource_o06y3")
+sources/1 = SubResource("TileSetAtlasSource_k7acu")
+
+[node name="World" type="Node2D" unique_id=494391456]
+
+[node name="MapSetup" type="TileMapLayer" parent="." unique_id=1414761688]
+tile_set = SubResource("TileSet_8j60k")
+script = ExtResource("3_5ukr8")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=772368266]
+script = ExtResource("1_go701")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=264961811]
+texture = ExtResource("1_a02cp")
