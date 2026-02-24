@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bmgv8j5vhb04e"]
+
+[ext_resource type="Texture2D" uid="uid://b6qxlejqe7jjm" path="res://assets/tileSnow_tile.png" id="1_h61g2"]
+[ext_resource type="Texture2D" uid="uid://b8l8qhwed8xu5" path="res://assets/tileDirt_tile.png" id="2_gr1es"]
+[ext_resource type="Script" uid="uid://cqp3i3baj3dle" path="res://game/site/map_setup.gd" id="2_qei7b"]
+[ext_resource type="Texture2D" uid="uid://dmpd0jvf2hdl8" path="res://assets/tileGrass_tile.png" id="3_gr1es"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr1es"]
+texture = ExtResource("1_h61g2")
+texture_region_size = Vector2i(65, 69)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txc6y"]
+texture = ExtResource("2_gr1es")
+texture_region_size = Vector2i(65, 69)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i3a40"]
+texture = ExtResource("3_gr1es")
+texture_region_size = Vector2i(65, 69)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w60g3"]
+tile_shape = 3
+tile_size = Vector2i(56, 54)
+sources/0 = SubResource("TileSetAtlasSource_gr1es")
+sources/1 = SubResource("TileSetAtlasSource_txc6y")
+sources/2 = SubResource("TileSetAtlasSource_i3a40")
+
+[node name="InGameScene" type="Node2D" unique_id=1965224949]
+
+[node name="MapSetup" type="TileMapLayer" parent="." unique_id=1298445413]
+tile_set = SubResource("TileSet_w60g3")
+script = ExtResource("2_qei7b")
+radius = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1823328197]
