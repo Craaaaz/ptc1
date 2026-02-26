@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://olt0fkg50deb"]
+
+[ext_resource type="Texture2D" uid="uid://ddjconomyis57" path="res://assets/alienBeige.png" id="1_6n17c"]
+[ext_resource type="Script" uid="uid://c2tmoch4bcakf" path="res://game/unit/king.gd" id="1_cctj3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cctj3"]
+radius = 20.0
+height = 62.0
+
+[node name="King" type="Area2D" unique_id=2049721854]
+y_sort_enabled = true
+script = ExtResource("1_cctj3")
+
+[node name="AlienBeige" type="Sprite2D" parent="." unique_id=1230051750]
+texture = ExtResource("1_6n17c")
+offset = Vector2(0, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=241949694]
+position = Vector2(0, -26)
+shape = SubResource("CapsuleShape2D_cctj3")

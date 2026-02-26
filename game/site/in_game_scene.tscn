@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmgv8j5vhb04e"]
 
 [ext_resource type="Texture2D" uid="uid://b6qxlejqe7jjm" path="res://assets/tileSnow_tile.png" id="1_h61g2"]
+[ext_resource type="Script" uid="uid://c1y7smsrph5xf" path="res://game/site/in_game_scene.gd" id="1_i3a40"]
 [ext_resource type="Texture2D" uid="uid://b8l8qhwed8xu5" path="res://assets/tileDirt_tile.png" id="2_gr1es"]
 [ext_resource type="Script" uid="uid://cqp3i3baj3dle" path="res://game/site/map_setup.gd" id="2_qei7b"]
 [ext_resource type="Texture2D" uid="uid://dmpd0jvf2hdl8" path="res://assets/tileGrass_tile.png" id="3_gr1es"]
@@ -29,10 +30,15 @@ sources/1 = SubResource("TileSetAtlasSource_txc6y")
 sources/2 = SubResource("TileSetAtlasSource_i3a40")
 
 [node name="InGameScene" type="Node2D" unique_id=1965224949]
+script = ExtResource("1_i3a40")
 
 [node name="MapSetup" type="TileMapLayer" parent="." unique_id=1298445413]
 tile_set = SubResource("TileSet_w60g3")
 script = ExtResource("2_qei7b")
+radius = 8
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1823328197]
 script = ExtResource("5_txc6y")
+
+[node name="Units" type="Node2D" parent="." unique_id=1109161953]
+y_sort_enabled = true
